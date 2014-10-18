@@ -3,5 +3,15 @@
 
     <string name="app_name">MyJukebox</string>
     <string name="action_anadir">Añadir disco</string>
+    <string name="title_activity_menu_anadir">Añadir Disco</string>
+    <string name="nuevodisco">Nuevo disco</string>
+    <string name="hinttitulo">Título</string>
+    <string name="hintartista">Artista</string>
+    <string name="hintanio">Año</string>
+    <string name="hintgenero">Género</string>
+    <string name="btanadir">Añadir</string>
+    <string name="title_activity_mostrar_disco">MostrarDisco</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

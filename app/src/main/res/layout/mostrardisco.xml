@@ -1,0 +1,58 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivMostrarCaratula"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/vinilo"
+        android:layout_weight="0.9" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tvMostrarTitulo"
+            android:layout_gravity="center_horizontal"
+            android:textSize="23dp"
+            android:textColor="#ff3eb9e7"
+            android:textStyle="italic"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tvMostrarArtista"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tvMostrarAnio"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tvMostrarGenero"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+</LinearLayout>
