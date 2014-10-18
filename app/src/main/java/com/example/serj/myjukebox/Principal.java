@@ -77,7 +77,5 @@ public class Principal extends Activity {
         discos.add(d5);
     }
 
-    private void tostada(String s){
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-    }
+
 }
