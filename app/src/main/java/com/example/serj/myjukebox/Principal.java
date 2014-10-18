@@ -39,10 +39,16 @@ public class Principal extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_anadir) {
+            return anadir();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //Método para añadir discos al ArrayList mediante la opcion de la ActionBar
+    private boolean anadir() {
+        tostada("Disco añadido");
+        return true;
     }
 
     private void initComponents() {
@@ -62,7 +68,7 @@ public class Principal extends Activity {
         Bitmap ramones = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.rmns);
         Bitmap revolver = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.rvlvr);
 
-        //Creamos los Discos por defecto
+        //Creamos los Discos por defecto(AÑADIR A STRINGS.XML!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
         d1 = new Disco("Lonerism", "Tame Impala", "2012", "Psychedelic", lonerism);
         d2 = new Disco("Led Zeppelin III", "Led Zeppelin", "1970", "Rock", ledzepiii);
         d3 = new Disco("OK Computer", "Radiohead", "1997", "Alternative", okcomp);
@@ -77,5 +83,7 @@ public class Principal extends Activity {
         discos.add(d5);
     }
 
-
+    private void tostada(String s){
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+    }
 }
