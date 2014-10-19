@@ -4,25 +4,33 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ivMostrarCaratula"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/vinilo"
-        android:layout_weight="0.9" />
+        android:layout_weight="0.9">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/ivMostrarCaratula"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/vinilo"
+            android:scaleType="fitXY" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal|top">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/hinttitulo"
             android:id="@+id/tvMostrarTitulo"
             android:layout_gravity="center_horizontal"
             android:textSize="23dp"
@@ -33,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/hintartista"
             android:id="@+id/tvMostrarArtista"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp" />
@@ -41,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/hintanio"
             android:id="@+id/tvMostrarAnio"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp" />
@@ -49,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/hintgenero"
             android:id="@+id/tvMostrarGenero"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp" />

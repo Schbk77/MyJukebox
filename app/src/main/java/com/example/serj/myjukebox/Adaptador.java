@@ -1,6 +1,7 @@
 package com.example.serj.myjukebox;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class Adaptador extends ArrayAdapter<Disco>{
         public TextView tv1, tv2, tv3;
         public ImageView iv;
         public int posicion;
+        public Typeface font_light, font_medium;
     }
 
     public Adaptador(Context context, int resource, ArrayList<Disco> objects) {
@@ -41,6 +43,9 @@ public class Adaptador extends ArrayAdapter<Disco>{
             vh.tv2 = (TextView)convertView.findViewById(R.id.tvArtista);
             vh.tv3 = (TextView)convertView.findViewById(R.id.tvAnio);
             vh.iv = (ImageView)convertView.findViewById(R.id.ivCaratula);
+            //Fuentes externas
+            vh.font_light = Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-Light.ttf");
+            vh.font_medium = Typeface.createFromAsset(getContext().getAssets(), "fonts/Roboto-MediumItalic.ttf");
             convertView.setTag(vh);
         }else{
             vh = (ViewHolder)convertView.getTag();
@@ -50,6 +55,10 @@ public class Adaptador extends ArrayAdapter<Disco>{
         vh.tv2.setText(discos.get(position).getArtista());
         vh.tv3.setText(discos.get(position).getAnio());
         vh.iv.setImageBitmap(discos.get(position).getCaratula());
+        //Cambiar fuentes
+        vh.tv1.setTypeface(vh.font_medium);
+        vh.tv2.setTypeface(vh.font_light);
+        vh.tv3.setTypeface(vh.font_light);
         return convertView;
     }
 }

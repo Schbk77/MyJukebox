@@ -1,30 +1,34 @@
 package com.example.serj.myjukebox;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 
 public class Principal extends Activity {
     /*****************************************VARIABLES********************************************/
-    static ArrayList<Disco> discos;                 //Variable donde almaceno la biblioteca de discos
     private Disco d1, d2, d3, d4, d5;               //Discos de ejemplo que se crean por defecto
+    static ArrayList<Disco> discos;                 //Variable donde almaceno la biblioteca de discos
     static Adaptador ad;                            //Adaptador para objetos de tipo Disco
     static int aux;                                 //Variable auxiliar para saber la posición del Disco del ArrayList al que se accede
-    static String titulo, artista, anio, genero;    //Variables estáticas auxiliares para acceder desde otra clase
 
     /********************************************ON...*********************************************/
     //PANTALLA PRINCIPAL
@@ -66,6 +70,8 @@ public class Principal extends Activity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int id = item.getItemId();
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        aux = info.position;
         if(id == R.id.opEditar){
             return editar();
         }else if(id == R.id.opBorrar) {
@@ -84,12 +90,27 @@ public class Principal extends Activity {
 
     //Método para editar un disco ya añadido
     private boolean editar() {
-
+        Intent nuevoIntent = new Intent(this, MenuEditar.class);
+        startActivity(nuevoIntent);
+        return true;
     }
 
     //Método para borrar un disco ya añadido
     private boolean borrar() {
-
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setMessage(R.string.dialog_message);
+        alert.setTitle(R.string.dialog_title);
+        alert.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                discos.remove(aux);
+                ad.notifyDataSetChanged();
+                tostada("Disco borrado");
+            }
+        });
+        alert.setNegativeButton(R.string.no,null);
+        AlertDialog dialog = alert.create();
+        dialog.show();
+        return true;
     }
 
     //Método para mostrar los detalles de un disco
@@ -126,11 +147,11 @@ public class Principal extends Activity {
         Bitmap revolver = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.rvlvr);
 
         //Creamos los Discos por defecto(AÑADIR A STRINGS.XML!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
-        d1 = new Disco("Lonerism", "Tame Impala", "2012", "Psychedelic", lonerism);
-        d2 = new Disco("Led Zeppelin III", "Led Zeppelin", "1970", "Rock", ledzepiii);
-        d3 = new Disco("OK Computer", "Radiohead", "1997", "Alternative", okcomp);
-        d4 = new Disco("Ramones", "Ramones", "1976", "Punk", ramones);
-        d5 = new Disco("Revolver", "The Beatles", "1966", "Psychedelic", revolver);
+        d1 = new Disco(getString(R.string.titulod1), getString(R.string.artistad1), getString(R.string.aniod1), getString(R.string.generod1), lonerism);
+        d2 = new Disco(getString(R.string.titulod2), getString(R.string.artistad2), getString(R.string.aniod2), getString(R.string.generod2), ledzepiii);
+        d3 = new Disco(getString(R.string.titulod3), getString(R.string.artistad3), getString(R.string.aniod3), getString(R.string.generod3), okcomp);
+        d4 = new Disco(getString(R.string.titulod4), getString(R.string.artistad4), getString(R.string.aniod4), getString(R.string.generod4), ramones);
+        d5 = new Disco(getString(R.string.titulod5), getString(R.string.artistad5), getString(R.string.aniod5), getString(R.string.generod5), revolver);
 
         //Añadimos los Discos al ArrayList
         discos.add(d1);

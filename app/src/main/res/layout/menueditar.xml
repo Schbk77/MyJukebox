@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.serj.myjukebox.MenuEditar">
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/ibEditarCaratula"
+        android:src="@drawable/vinilo"
+        android:clickable="true"
+        android:scaleType="fitXY"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etEditarTitulo"
+        android:hint="@string/hinttitulo"
+        android:layout_alignBottom="@+id/ibEditarCaratula"
+        android:layout_toRightOf="@+id/ibEditarCaratula"
+        android:layout_toEndOf="@+id/ibEditarCaratula" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etEditarArtista"
+        android:layout_below="@+id/etEditarTitulo"
+        android:layout_alignLeft="@+id/etEditarTitulo"
+        android:layout_alignStart="@+id/etEditarTitulo"
+        android:hint="@string/hintartista" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etEditarAnio"
+        android:hint="@string/hintanio"
+        android:layout_below="@+id/etEditarArtista"
+        android:layout_alignLeft="@+id/etEditarArtista"
+        android:layout_alignStart="@+id/etEditarArtista" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etEditarGenero"
+        android:layout_below="@+id/etEditarAnio"
+        android:layout_alignLeft="@+id/etEditarAnio"
+        android:layout_alignStart="@+id/etEditarAnio"
+        android:hint="@string/hintgenero" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btguardar"
+        android:id="@+id/button"
+        android:onClick="guardarCambios"
+        android:layout_below="@+id/etEditarGenero"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

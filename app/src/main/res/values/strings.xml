@@ -11,7 +11,37 @@
     <string name="hintgenero">Género</string>
     <string name="btanadir">Añadir</string>
     <string name="title_activity_mostrar_disco">MostrarDisco</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu_editar">MenuEditar</string>
+    <string name="btguardar">Guardar</string>
+    <string name="dialog_message">¿Está seguro de que desea borrar el disco?</string>
+    <string name="dialog_title">Borrar disco</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="discoborrado">Disco borrado</string>
+    <string name="discomodificado">Disco modificado</string>
+    <string name="discoaniadido">Disco añadido</string>
+    <string name="tostadaaniadirerror">Debe rellenar todos los campos</string>
+
+    <!--DISCOS-->
+    <string name="titulod1">Lonerism</string>
+    <string name="titulod2">Led Zeppelin III</string>
+    <string name="titulod3">OK Computer</string>
+    <string name="titulod4">Ramones</string>
+    <string name="titulod5">Revolver</string>
+    <string name="artistad1">Tame Impala</string>
+    <string name="artistad2">Led Zeppelin</string>
+    <string name="artistad3">Radiohead</string>
+    <string name="artistad4">Ramones</string>
+    <string name="artistad5">The Beatles</string>
+    <string name="aniod1">2012</string>
+    <string name="aniod2">1970</string>
+    <string name="aniod3">1997</string>
+    <string name="aniod4">1976</string>
+    <string name="aniod5">1966</string>
+    <string name="generod1">Psychedelic</string>
+    <string name="generod2">Rock</string>
+    <string name="generod3">Alternative</string>
+    <string name="generod4">Punk</string>
+    <string name="generod5">Psychedelic</string>
 
 </resources>
