@@ -61,6 +61,7 @@
             android:id="@+id/tvMostrarGenero"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp" />
+
     </LinearLayout>
 
 </LinearLayout>
