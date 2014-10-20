@@ -146,7 +146,7 @@ public class Principal extends Activity {
         Bitmap ramones = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.rmns);
         Bitmap revolver = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.rvlvr);
 
-        //Creamos los Discos por defecto(AÑADIR A STRINGS.XML!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
+        //Creamos los Discos por defecto
         d1 = new Disco(getString(R.string.titulod1), getString(R.string.artistad1), getString(R.string.aniod1), getString(R.string.generod1), lonerism);
         d2 = new Disco(getString(R.string.titulod2), getString(R.string.artistad2), getString(R.string.aniod2), getString(R.string.generod2), ledzepiii);
         d3 = new Disco(getString(R.string.titulod3), getString(R.string.artistad3), getString(R.string.aniod3), getString(R.string.generod3), okcomp);

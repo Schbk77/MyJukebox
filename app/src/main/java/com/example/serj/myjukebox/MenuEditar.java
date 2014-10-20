@@ -3,6 +3,7 @@ package com.example.serj.myjukebox;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -55,14 +56,23 @@ public class MenuEditar extends Activity {
     }
 
     public void guardarCambios(View v) {
-        Principal.discos.get(Principal.aux).setTitulo(tv1.getText().toString());
-        Principal.discos.get(Principal.aux).setArtista(tv2.getText().toString());
-        Principal.discos.get(Principal.aux).setAnio(tv3.getText().toString());
-        Principal.discos.get(Principal.aux).setGenero(tv4.getText().toString());
-        Principal.discos.get(Principal.aux).setCaratula(BitmapFactory.decodeFile(picturePath));
-        Toast.makeText(this, getString(R.string.discomodificado), Toast.LENGTH_SHORT).show();
-        Principal.ad.notifyDataSetChanged();
-        this.finish();
+        if (!((String)tv1.getText().toString()).isEmpty() &&
+                !((String)tv2.getText().toString()).isEmpty() &&
+                !((String)tv3.getText().toString()).isEmpty() &&
+                !((String)tv4.getText().toString()).isEmpty()) {
+            Principal.discos.get(Principal.aux).setTitulo(tv1.getText().toString());
+            Principal.discos.get(Principal.aux).setArtista(tv2.getText().toString());
+            Principal.discos.get(Principal.aux).setAnio(tv3.getText().toString());
+            Principal.discos.get(Principal.aux).setGenero(tv4.getText().toString());
+            if(picturePath != null){
+                Principal.discos.get(Principal.aux).setCaratula(BitmapFactory.decodeFile(picturePath));
+            }
+            Toast.makeText(this, getString(R.string.discomodificado), Toast.LENGTH_SHORT).show();
+            Principal.ad.notifyDataSetChanged();
+            this.finish();
+        } else {
+            Toast.makeText(this, getString(R.string.tostadaaniadirerror), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
