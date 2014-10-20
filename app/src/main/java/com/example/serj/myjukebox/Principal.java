@@ -164,6 +164,4 @@ public class Principal extends Activity {
     private void tostada(String s){
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
-
-    //Comentario prueba
 }
